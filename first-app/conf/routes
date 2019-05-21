@@ -1,0 +1,2 @@
+GET         /                        controllers.HomeController.index
+GET         /:name                   controllers.HomeController.hello(name:String)
