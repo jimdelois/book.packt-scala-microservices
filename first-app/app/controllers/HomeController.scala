@@ -37,7 +37,10 @@ class HomeController @Inject()(cc: ControllerComponents) extends AbstractControl
   // Some examples of other responses...
   def sqrt(num:String) = Action {
     scala.util.Try(num.toInt) match {
-      case scala.util.Success(ans) if ans >= 0 => Ok(s"The answer is: ${math.sqrt(ans)}")
+      case scala.util.Success(ans) if ans >= 0 => {
+        val html: play.twirl.api.Html = views.html.sqrt(math.sqrt(ans))
+        Ok(html)
+      }
       case scala.util.Success(ans) => BadRequest(s"The input ($num) must be greater than zero")
       case scala.util.Failure(ex) => InternalServerError(s"Could not extract the contents from $num")
     }
