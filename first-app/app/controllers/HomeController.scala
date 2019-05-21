@@ -13,6 +13,8 @@ class HomeController @Inject()(cc: ControllerComponents) extends AbstractControl
   // As per Scala, Action {...} is syntactic sugar for "Action.apply{...}"
   def hello(name: String) = Action {
     Ok(s"Hello, $name!")
+      .withHeaders("Server" -> "Play")
+      .withCookies(Cookie("CookieName", scala.util.Random.nextInt().toString))
   }
 
 
