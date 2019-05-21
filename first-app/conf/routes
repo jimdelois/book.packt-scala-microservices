@@ -1,2 +1,3 @@
 GET         /                        controllers.HomeController.index
 GET         /:name                   controllers.HomeController.hello(name:String)
+POST        /user/addUser            controllers.HomeController.addUser
