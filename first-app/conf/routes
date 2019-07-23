@@ -2,3 +2,7 @@ GET         /                        controllers.HomeController.index
 GET         /:name                   controllers.HomeController.hello(name:String)
 POST        /user/addUser            controllers.HomeController.addUser
 GET         /sqrt/:num               controllers.HomeController.sqrt(num:String)
+
+GET         /auth/index              controllers.LoginController.index
+GET         /auth/logout             controllers.LoginController.logout
+GET         /auth/login              controllers.LoginController.login(name:String, password: String)
